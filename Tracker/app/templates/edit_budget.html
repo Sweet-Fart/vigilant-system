@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Edit Budget</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+  </form>
+
+
+{% endblock %}
+
+
+  <h1>Edit Budget</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="form-group">
+      <label for="{{ form.frequency.id_for_label }}">Frequency:</label>
+      {{ form.frequency }}
+    </div>
+    <div class="form-group">
+      <label for="{{ form.amount_per_frequency.id_for_label }}">Amount per frequency:</label>
+      {{ form.amount_per_frequency }}
+    </div>
+    <button type="submit">Save</button>
+  </form>
+

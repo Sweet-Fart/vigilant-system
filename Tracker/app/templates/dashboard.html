@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Dashboard</h1>
+
+   <div class="dashboard">
+    
+    <div class="dashboard__card dashboard__card--yesterday">
+      <h2 class="dashboard__card__title">Yesterday</h2>
+      <p class="dashboard__card__amount">{{ yesterday_total }}</p>
+    </div>
+
+    <div class="dashboard__card dashboard__card--today">
+      <h2 class="dashboard__card__title">Today</h2>
+      <p class="dashboard__card__amount">{{ today_total }}</p>
+    </div>
+
+    
+    <div class="dashboard__card dashboard__card--last-week">
+      <div class="dashboard__card__title">Last Week</div>
+      <div class="dashboard__card__amount">{{ last_week_total }}</div>
+    </div>
+
+    <div class="dashboard__card dashboard__card--this-week">
+      <div class="dashboard__card__title">This Week</div>
+      <div class="dashboard__card__amount">{{ this_week_total }}</div>
+    </div>
+
+    <div class="dashboard__card dashboard__card--last-month">
+      <div class="dashboard__card__title">Last Month</div>
+      <div class="dashboard__card__amount">{{ last_month_total }}</div>
+    </div>
+    
+    <div class="dashboard__card dashboard__card--this-month">
+      <div class="dashboard__card__title">This Month</div>
+      <div class="dashboard__card__amount">{{ this_month_total }}</div>
+    </div>
+
+    <div class="dashboard__card dashboard__card--last-year">
+      <div class="dashboard__card__title">Last Year</div>
+      <div class="dashboard__card__amount">{{ last_year_total }}</div>
+    </div>
+  
+    <div class="dashboard__card dashboard__card--this-year">
+      <div class="dashboard__card__title">This Year</div>
+      <div class="dashboard__card__amount">{{ this_year_total }}</div>
+    </div>
+  </div>
+  <style>
+/* Dashboard styling */
+.dashboard {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+margin-top: 30px;
+}
+
+.dashboard__card {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 200px;
+height: 200px;
+margin: 20px;
+background-color: #fff;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+transition: all 0.3s ease-in-out;
+}
+
+.dashboard__card:hover {
+transform: scale(1.05);
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.dashboard__card--yesterday {
+background-color: #ffe5e5;
+}
+
+.dashboard__card--today {
+background-color: #fff1cc;
+}
+
+.dashboard__card__title {
+font-size: 20px;
+margin-bottom: 10px;
+}
+
+.dashboard__card__amount {
+font-size: 36px;
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+.dashboard__card__amount:before {
+content: "₱ ";
+}
+
+.dashboard__card__icon {
+font-size: 48px;
+margin-bottom: 10px;
+}
+
+.dashboard__card__icon:before {
+content: "\f155";
+font-family: "Font Awesome 5 Free";
+}
+
+.dashboard__card__button {
+display: block;
+width: 80%;
+padding: 10px;
+margin-top: 10px;
+font-size: 16px;
+font-weight: bold;
+color: #fff;
+background-color: #007bff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.dashboard__card__button:hover {
+background-color: #0069d9;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 600px) {
+.dashboard__card {
+width: 150px;
+height: 150px;
+}
+
+.dashboard__card__title {
+font-size: 16px;
+}
+
+.dashboard__card__amount {
+font-size: 24px;
+}
+
+.dashboard__card__icon {
+font-size: 32px;
+}
+
+.dashboard__card__button {
+font-size: 14px;
+}
+}
+  </style>
+  {% endblock %}
